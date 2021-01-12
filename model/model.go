@@ -5,5 +5,8 @@ import (
 )
 
 type SavedFile struct {
-	InitTime time.Time
+	Filename               string
+	InitTime               time.Time
+	ExpireDuration         time.Duration
+	AccessedExpireDuration time.Duration
 }

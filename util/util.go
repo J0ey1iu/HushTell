@@ -1,10 +1,13 @@
 package util
 
 import (
+	"HushTell/model"
 	"crypto/sha1"
 	"fmt"
+	"io/ioutil"
 	"os"
 	"strings"
+	"time"
 )
 
 // Hash uses sha-1 to hash the input string
@@ -31,5 +34,22 @@ func CreateFolderByName(name string) {
 	// first determine if the folder exists
 	if _, err := os.Stat("./temp/" + name); os.IsNotExist(err) {
 		os.MkdirAll("./temp/"+name, os.ModePerm)
+	}
+}
+
+// InitAccessedTimer timer to delete accessed file
+func InitAccessedTimer(
+	key string, folder string, path string, visitTime time.Time,
+	thres time.Duration, globalTimers *map[string]model.SavedFile) {
+	for 1 == 1 {
+		if time.Now().Sub(visitTime) > thres {
+			os.Remove(path) // TODO: err not handled
+			delete(*globalTimers, key)
+			if files, _ := ioutil.ReadDir(folder); len(files) == 0 {
+				os.Remove(folder)
+			}
+			break
+		}
+		time.Sleep(time.Second)
 	}
 }

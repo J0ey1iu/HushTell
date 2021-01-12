@@ -2,8 +2,8 @@ package main
 
 import (
 	"HushTell/config"
-	"HushTell/util"
 	"HushTell/model"
+	"HushTell/util"
 	"fmt"
 	"html/template"
 	"io/ioutil"
@@ -15,8 +15,6 @@ import (
 
 	"github.com/gorilla/mux"
 )
-
-
 
 var tempFileTimers map[string]model.SavedFile = make(map[string]model.SavedFile)
 
@@ -35,20 +33,22 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 
 	// get the file from request
 	file, handler, err := r.FormFile("myfile")
-	if err != nil {fmt.Println(err)}
+	if err != nil {
+		fmt.Println(err)
+	}
 	defer file.Close()
 
 	// create a tempfile and write the info down
 	ext := filepath.Ext(handler.Filename)
 	tempFile, err := ioutil.TempFile("temp/"+clientHash, "*"+ext)
 	defer tempFile.Close()
-	fmt.Println("Creating tempFile at: "+tempFile.Name())
+	fmt.Println("Creating tempFile at: " + tempFile.Name())
 	tempFileName := strings.Join(strings.Split(tempFile.Name(), "/")[1:], "/")
 	fileBytes, err := ioutil.ReadAll(file)
 	_, err = tempFile.Write(fileBytes)
 
 	// create a new record
-	tempFileTimers[tempFileName] = model.SavedFile{InitTime: time.Now()}
+	tempFileTimers[tempFileName] = model.SavedFile{Filename: tempFileName, InitTime: time.Now(), ExpireDuration: config.GlobalExpireDuration, AccessedExpireDuration: 3 * time.Second}
 
 	fmt.Fprintln(w, "Uploaded successfully.")
 	fmt.Fprintf(w, "Corresponding file <a href=\"%s\">link", "http://localhost:"+config.PORT+"/f/"+tempFileName)
@@ -68,11 +68,16 @@ func indexPage(w http.ResponseWriter, r *http.Request) {
 func fileAccessHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	fmt.Fprintf(w, "The file you are trying to access is: %s\n", vars["filename"])
-	_, err := os.Stat("./temp/" + vars["hashedIP"] + "/" + vars["filename"])
+	path := "./temp/" + vars["hashedIP"] + "/" + vars["filename"]
+	folder := "./temp/" + vars["hashedIP"]
+	_, err := os.Stat(path)
 	if err != nil {
 		fmt.Fprintln(w, "The file does not exist.")
 	} else {
 		fmt.Fprintln(w, "Found the file.")
+		aed := tempFileTimers[vars["hashedIP"]+"/"+vars["filename"]].AccessedExpireDuration
+		fmt.Fprintln(w, "The file will destroy itself in ", aed)
+		go util.InitAccessedTimer(vars["hashedIP"]+"/"+vars["filename"], folder, path, time.Now(), aed, &tempFileTimers)
 	}
 }
 
@@ -84,20 +89,20 @@ func setupRoutes() {
 	http.ListenAndServe(":"+config.PORT, r)
 }
 
-func checkTimer() {
-	for 1==1 {
+func checkGlobalTimer() {
+	for 1 == 1 {
 		for key := range tempFileTimers {
-			fmt.Printf(key+": ")
-			fmt.Print(time.Now().Sub(tempFileTimers[key].InitTime))
-			fmt.Printf("\n")
+			if time.Now().Sub(tempFileTimers[key].InitTime) > tempFileTimers[key].ExpireDuration {
+				os.Remove(tempFileTimers[key].Filename)
+			}
 		}
-		time.Sleep(3*time.Second)
+		time.Sleep(3 * time.Second)
 		fmt.Println(tempFileTimers)
 	}
 }
 
 func main() {
 	fmt.Printf("Running a simple server at port %s...\n", config.PORT)
-	go checkTimer()
+	go checkGlobalTimer()
 	setupRoutes()
 }

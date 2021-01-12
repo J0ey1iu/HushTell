@@ -18,3 +18,7 @@ func TestShortHash(t *testing.T) {
 func TestCreateFolderByName(t *testing.T) {
 	CreateFolderByName("test")
 }
+
+func TestCreateFile(t *testing.T) {
+	createFile()
+}

@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "554019",
+      "name": "笔记",
+      "font_class": "iconset0124",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "10268893",
+      "name": "文件",
+      "font_class": "wenjian",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    },
+    {
+      "icon_id": "19380888",
+      "name": "线性警告",
+      "font_class": "xianxingjinggao",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "19380907",
+      "name": "线性设置",
+      "font_class": "xianxingshezhi",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    }
+  ]
+}

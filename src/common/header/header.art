@@ -1,0 +1,29 @@
+<div class="headerContainer">
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="logo col-3 col-md-1">
+                <img src="../../assets/imgs/logo.png" alt="logo">
+            </div>
+            <span class="companyDescription col-3 col-md-1">Just for fun</span>
+            <div class="iconBar ml-xl-auto d-none d-xl-flex col-xl-2">
+                <i class="iconfont">&#xe640;</i>
+                <i class="iconfont">&#xe645;</i>
+                <i class="iconfont">&#xe646;</i>
+                <i class="iconfont">&#xe647;</i>
+                <i class="iconfont">&#xe61d;</i>
+            </div>
+            <div class="dropdown ml-auto ml-xl-0 d-none d-md-flex col-md-2 col-xl-1">
+                <a class="btn dropdown-toggle btn-sm" id="langChoose" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    简体中文
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">简体中文</button>
+                    <button class="dropdown-item" type="button">En</button>
+                </div>
+            </div>
+            <a class="donateBtn ml-auto ml-md-0 col-3 col-md-2 col-xl-1" href="#" role="button">
+                <span><i class="iconfont">&#xe627;</i>&nbspDONATE</span>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,129 @@
+body{
+    background-color: #f0f2f6 !important;
+}
+/* header */
+header{
+    height: 3.75rem;
+    width: 100vw;
+}
+
+header .headerContainer{
+    height: 100%;
+    width: 100% ;
+    background: #001720
+}
+header .headerContainer .container-fluid{  
+    margin:0;
+    padding:0;
+    height: 100%;
+}
+header .headerContainer .container-fluid .row{
+    height: 100%;
+    display:flex;
+    align-items: center;
+}
+header .headerContainer .container-fluid .row .logo{
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header .headerContainer .container-fluid .row .logo img{
+    height: 100%;
+    padding : 10px 0;
+}
+
+header .headerContainer .container-fluid .row .companyDescription{
+    margin-left: 20px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #9cb0b6;
+}
+
+header .headerContainer .container-fluid .row .iconBar{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+}
+header .headerContainer .container-fluid .row .iconBar i{
+    color:gray;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left:15px;
+    transition: 0.5s ease;
+}
+header .headerContainer .container-fluid .row .iconBar i:hover{
+    color:white;
+}
+header .headerContainer .container-fluid .row .dropdown{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .headerContainer .container-fluid .row .dropdown #langChoose{
+    background-color: transparent;
+    border: none;
+    margin: 0 auto;
+    color: gray;
+    transition: 0.5s ease;
+}
+header .headerContainer .container-fluid .row .dropdown #langChoose:hover{
+    color: white;
+}
+header .headerContainer .container-fluid .row .donateBtn{
+    position: relative;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:5px 10px;
+    background-color: #00abee;
+    height: 60%;
+    border-radius: 20px;
+    transition: 0.5s ease;
+}
+header .headerContainer .container-fluid .row .donateBtn:hover{
+    background-color: #39c2f9;
+}
+
+header .headerContainer .container-fluid .row .donateBtn span i{
+    color: white;
+    font-size: 12px;
+}
+header .headerContainer .container-fluid .row .donateBtn span{
+    color: white;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* footer */
+footer{
+    height: 3.75rem;
+}
+footer .container-fluid .row .nav a{
+    display: block;
+    color:#00abee;
+    text-decoration: underline !important;
+    padding: 10px;
+}
+footer .container-fluid .row .nav a:hover{
+    text-decoration: none !important;
+}
+footer .container-fluid .row .nav .cur{
+    color: gray;
+    text-decoration: none !important;
+    cursor: default;
+}
+footer .container-fluid .row .copyright{
+    color: #9cb0b6;
+    font-size: 12px;
+    line-height: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+

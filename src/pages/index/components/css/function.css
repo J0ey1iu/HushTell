@@ -1,0 +1,118 @@
+main .container-fluid{
+    position: relative;
+}
+main .container-fluid .row .howItWork{
+    font-size: 16px;
+    color: #00abee;
+    font-weight: bold;
+}
+main .container-fluid .row .howItWork i{
+    font-weight: normal;
+    color:gray;
+}
+main .container-fluid .row .howItWork a{
+    text-decoration: underline !important;
+    cursor: pointer;
+}
+main .container-fluid .row .howItWork a:hover{
+    text-decoration: none !important;
+}
+main .container-fluid .functionContainer{
+    position: relative;
+}
+main .container-fluid .functionContainer .functionBox{
+    position: relative;
+    width: 48%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    height: 560px;
+    padding:15px;
+    transition: 0.5s ease;
+    margin-left:2%;
+}
+
+main .container-fluid .functionContainer .functionBox:hover{
+    box-shadow: 0px 0px 50px 0px rgba(0, 23, 32, 0.1);
+	margin-top: -2px;
+}
+@media (max-width:768px){
+    main .container-fluid .functionContainer .functionBox{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+main .container-fluid .functionContainer .functionBox .title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+main .container-fluid .functionContainer .functionBox .title .iconfontIndex{
+    font-size: 1.5rem !important;
+}
+main .container-fluid .functionContainer .functionBox .title span{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+main .container-fluid .functionContainer .functionBox:first-child .title .iconfontIndex,
+main .container-fluid .functionContainer .functionBox:first-child .title span .highlight{
+    color: #00abee;
+}
+
+main .container-fluid .functionContainer .functionBox:last-child .title .iconfontIndex,
+main .container-fluid .functionContainer .functionBox:last-child .title span .highlight{
+    color: #5eb54e;
+}
+
+main .container-fluid .functionContainer .functionBox .desc{
+    font-size: 14px;
+    line-height: 18px;
+    color: #77888f;
+    margin-bottom: 20px;
+}
+
+main .container-fluid .functionContainer .functionBox .function{
+    width: 100%;
+    height: 450px;
+    position: relative;
+    font-size: 16px;
+    background: #f4f7fb;
+    border: 2px solid #f4f7fb;
+    border-radius: 15px;
+    padding: 15px;
+    font-family: unset;
+    transition: 1s ease;
+}
+main .container-fluid .functionContainer .functionBox .function:focus{
+    border: #00abee solid 2px;
+}
+main .container-fluid .functionContainer .functionBox textarea.function{
+    outline: none;
+    resize: none;
+}
+
+main .container-fluid .settingsBtn{
+    display: flex;
+    justify-content: center;
+}
+
+main .container-fluid .settingsForm{
+    width: 100%;
+    margin: 0 auto;
+    transition: .5s ease;
+    height: auto;
+}
+main .container-fluid .settingsForm.hidden{
+    height: 0;
+    overflow: hidden;
+}
+main .container-fluid .settingsForm #optionsForm{
+    width: 100%;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-left: 2%;
+    transition: 2s ease;
+}

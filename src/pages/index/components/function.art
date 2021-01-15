@@ -18,7 +18,7 @@
             </div>
             <div class="desc">&nbspUpload file below, encrypt it and get a link</div>   
             <div class="function">
-                <form action="/file-upload"class="dropzone needsclick dz-clickable" id="my-awesome-dropzone"></form>
+                <form action="/file-upload" id="my-awesome-dropzone"></form>
             </div>     
         </div>
     </div>
@@ -66,7 +66,11 @@
             <i class="iconfontIndex">&#xe607;</i>&nbspShow options
         </button>
     </div>
-
+    <div class="row no-gutters mt-1 mb-4 submitBtn d-flex justify-content-center align-items-center">
+        <button class="btn" type="button">
+            CREATE NOTE
+        </button>
+    </div>
 </div>
 
 

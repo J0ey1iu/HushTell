@@ -1,11 +1,3 @@
-// lazy load
-// (function() {
-//         document.body.style.display = "none";
-//         setTimeout(function () {
-//             document.body.style.display = "block";
-//         },200)
-// })();
-
 // note function
 (function() {
     const noteFunction = document.getElementsByClassName("functionBox")[0].getElementsByClassName("function")[0];
@@ -33,3 +25,5 @@
         }
     },false)
 })();
+
+// 

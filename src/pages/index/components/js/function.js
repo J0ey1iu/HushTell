@@ -1,3 +1,5 @@
+import Dropzone from 'api/dropzone-5.7.0/dist/dropzone.js'
+
 // note function
 (function() {
     const noteFunction = document.getElementsByClassName("functionBox")[0].getElementsByClassName("function")[0];
@@ -17,13 +19,19 @@
         if (settingsForm.classList.contains("hidden")){
             settingsForm.classList.remove("hidden");
             settingsBtn.innerHTML = `<i class="iconfontIndex">&#xe607;</i>&nbspHidden options`;
-            console.log("1");
         }else{
             settingsForm.classList.add("hidden");
             settingsBtn.innerHTML = `<i class="iconfontIndex">&#xe607;</i>&nbspShow options`;
-            console.log("2");
         }
     },false)
 })();
 
-// 
+// dropzone settings
+(function (){
+    Dropzone.options.myAwesomeDropzone = {
+        paramName: "file", // The name that will be used to transfer the file
+        maxFiles: 2, // MB
+        addRemoveLinks: true
+    };
+})()
+

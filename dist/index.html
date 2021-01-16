@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="">
+    <title>Tools-simple tools' platform</title>
+</head>
+<body>
+    <header><div class="headerContainer">
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="logo col-3 col-md-1">
+                <img src="images/logo.png" alt="logo">
+            </div>
+            <span class="companyDescription col-3 col-md-1">Just for fun</span>
+            <div class="iconBar ml-xl-auto d-none d-xl-flex col-xl-2">
+                <i class="iconfont">&#xe640;</i>
+                <i class="iconfont">&#xe645;</i>
+                <i class="iconfont">&#xe646;</i>
+                <i class="iconfont">&#xe647;</i>
+                <i class="iconfont">&#xe61d;</i>
+            </div>
+            <div class="dropdown ml-auto ml-xl-0 d-none d-md-flex col-md-2 col-xl-1">
+                <a class="btn dropdown-toggle btn-sm" id="langChoose" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    简体中文
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">简体中文</button>
+                    <button class="dropdown-item" type="button">En</button>
+                </div>
+            </div>
+            <a class="donateBtn ml-auto ml-md-0 col-3 col-md-2 col-xl-1" href="#" role="button">
+                <span><i class="iconfont">&#xe627;</i>&nbspDONATE</span>
+            </a>
+        </div>
+    </div>
+</div>
+</header>
+    <main><div class="container-fluid">
+    <div class="row no-gutters mt-4">
+        <span class="howItWork col-6 col-md-2 ml-auto text-right" href="#"><i class="iconfontIndex">&#xe603;</i>&nbsp<a>How it work?</a></span>
+    </div>
+    <div class="row no-gutters functionContainer mt-2">
+        <div class="functionBox">
+            <div class="title">
+                <i class="iconfontIndex">&#xe617;</i>
+                <span>Create new <span class="highlight">private note</span></span>
+            </div>
+            <div class="desc">&nbspWrite the note below, encrypt it and get a link</div>
+            <textarea class="function" placeholder="Write your note here..." tabindex="1"></textarea>
+        </div>
+        <div class="functionBox">
+            <div class="title">
+                <i class="iconfontIndex">&#xe695;</i>
+                <span>Upload <span class="highlight">private file</span></span>
+            </div>
+            <div class="desc">&nbspUpload file below, encrypt it and get a link</div>   
+            <div class="function">
+                <form action="upload" method="post" enctype="multipart/form-data" class="dropzone" id="my-awesome-dropzone"></form>
+            </div>     
+        </div>
+    </div>
+    <div class="row no-gutters mt-4 settingsForm hidden">
+        <form id="optionsForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                </div>
+                <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                </select>
+                </div>
+                <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row no-gutters mt-4 settingsBtn">
+        <button class="btn btn-outline-secondary" type="button">
+            <i class="iconfontIndex">&#xe607;</i>&nbspShow options
+        </button>
+    </div>
+    <div class="row no-gutters mt-1 mb-4 submitBtn d-flex justify-content-center align-items-center">
+        <button class="btn" type="button">
+            CREATE NOTE
+        </button>
+    </div>
+</div>
+
+
+</main>
+    <footer><div class="container-fluid">
+    <div class="row no-gutters d-flex align-items-center">
+        <div class="nav d-flex justify-content-center align-items-center offset-3 col-6">
+            <a class="cur" href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">API</a>
+            <a href="#">Privacy</a>
+            <a href="#">Support</a>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="copyright text-center col">Copyright © 2018 - 2021 cmy. All rights reserved.</div>
+    </div>
+</div></footer>
+<script src="js/index.js"></script></body>
+</html>

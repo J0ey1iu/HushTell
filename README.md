@@ -16,9 +16,18 @@
 目前的项目结构比较初级，所有的数据处理和路由都在后端，先实现一个这样的版本，跑起来之后再考虑其他的架构
 
 ## 文件说明
-`/config`：全局变量或设置的存储位置
-`/model`：项目中用到的类或实体
-`/templates`：html渲染模板
-`/util`：工具函数
-`main.go`：主程序，使用`go run main.go`运行，不足的库会自动补充
-`docker`：dockerfile的存储地点，基本没用
+- `/config`：全局变量或设置的存储位置
+- `/model`：项目中用到的类或实体
+- `/templates`：html渲染模板
+- `/util`：工具函数
+- `main.go`：主程序，使用`go run main.go`运行，不足的库会自动补充
+- `docker`：dockerfile的存储地点，基本没用
+
+## docker使用说明
+首先安装好docker，重启电脑，运行docker之后，在命令行中输入：
+
+`docker run -it -p 8000:8000 joeyliu086/hushtell`
+
+首次使用会涉及到下载，下载可能会有点慢，一次下载之后就不用再次下载了
+
+docker跑起来之后可以通过http://localhost:8000 进入测试页

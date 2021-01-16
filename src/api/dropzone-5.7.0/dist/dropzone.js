@@ -815,9 +815,11 @@ function (_Emitter) {
               }
             }
 
+            // rewrite by cmy
             if (this.options.addRemoveLinks) {
+              let first = file.previewElement.firstChild;
               file._removeLink = Dropzone.createElement("<a class=\"dz-remove\" href=\"javascript:undefined;\" data-dz-remove>".concat(this.options.dictRemoveFile, "</a>"));
-              file.previewElement.appendChild(file._removeLink);
+              file.previewElement.insertBefore(file._removeLink, first);
             }
 
             var removeFileEvent = function removeFileEvent(e) {

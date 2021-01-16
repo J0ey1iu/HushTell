@@ -236,11 +236,12 @@
         -o-transition: opacity 0.2s linear;
         transition: opacity 0.2s linear; }
     .dropzone .dz-preview .dz-remove {
-      font-size: 14px;
-      text-align: center;
       display: block;
+      text-align: center;
       cursor: pointer;
-      border: none; }
+      border: none;
+      z-index:9999; 
+    }
       .dropzone .dz-preview .dz-remove:hover {
         text-decoration: underline; }
     .dropzone .dz-preview:hover .dz-details {
@@ -248,7 +249,8 @@
     .dropzone .dz-preview .dz-details {
       z-index: 20;
       position: absolute;
-      top: 0;
+      /* top:0; */
+      bottom: 0;
       left: 0;
       opacity: 0;
       font-size: 13px;

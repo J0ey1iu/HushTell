@@ -30,7 +30,7 @@ import Dropzone from 'api/dropzone-5.7.0/dist/dropzone.js'
 (function (){
     Dropzone.options.myAwesomeDropzone = {
         paramName: "file", // The name that will be used to transfer the file
-        maxFiles: 2, // MB
+        maxFiles: 1, 
         addRemoveLinks: true
     };
 })()

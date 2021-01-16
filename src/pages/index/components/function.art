@@ -18,7 +18,7 @@
             </div>
             <div class="desc">&nbspUpload file below, encrypt it and get a link</div>   
             <div class="function">
-                <form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
+                <form action="upload" method="post" enctype="multipart/form-data" class="dropzone" id="my-awesome-dropzone"></form>
             </div>     
         </div>
     </div>

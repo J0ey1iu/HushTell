@@ -4,10 +4,13 @@ import (
 	"HushTell/config"
 	"HushTell/model"
 	"HushTell/util"
+	"bytes"
 	"fmt"
 	"html/template"
 	"io/ioutil"
+	"log"
 	"net/http"
+	"net/http/httputil"
 	"os"
 	"path/filepath"
 	"strings"
@@ -19,6 +22,25 @@ import (
 var tempFileTimers map[string]model.SavedFile = make(map[string]model.SavedFile)
 
 func uploadHandler(w http.ResponseWriter, r *http.Request) {
+	// test
+	data, err := httputil.DumpRequest(r, false)
+	if err != nil {
+		log.Fatal("Error when dumping request!!")
+	}
+	fmt.Printf("\n\n\n%s\n\n\n", string(data))
+
+	buf, bodyErr := ioutil.ReadAll(r.Body)
+	if bodyErr != nil {
+		log.Print("bodyErr ", bodyErr.Error())
+		http.Error(w, bodyErr.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	rdr1 := ioutil.NopCloser(bytes.NewBuffer(buf))
+	rdr2 := ioutil.NopCloser(bytes.NewBuffer(buf))
+	log.Printf("BODY: %q", rdr1)
+	r.Body = rdr2
+
 	// get the client IP
 	clientIP := strings.Split(r.RemoteAddr, ":")[0]
 	// hash the IP
@@ -27,14 +49,15 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 	util.CreateFolderByName(clientHash)
 
 	// display on page
-	fmt.Println("Receiving an upload from: " + clientIP)
+	log.Println("Receiving an upload from: " + clientIP)
 	fmt.Fprintf(w, "<h1>Page after upload</h1>\n")
 	r.ParseMultipartForm(10 << 20)
+	r.ParseForm()
 
 	// get the file from request
 	file, handler, err := r.FormFile("myfile")
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 	}
 	defer file.Close()
 
@@ -42,7 +65,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 	ext := filepath.Ext(handler.Filename)
 	tempFile, err := ioutil.TempFile("temp/"+clientHash, "*"+ext)
 	defer tempFile.Close()
-	fmt.Println("Creating tempFile at: " + tempFile.Name())
+	log.Println("Creating tempFile at: " + tempFile.Name())
 	tempFileName := strings.Join(strings.Split(tempFile.Name(), "/")[1:], "/")
 	fileBytes, err := ioutil.ReadAll(file)
 	_, err = tempFile.Write(fileBytes)
@@ -57,8 +80,8 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 func indexPage(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("templates/index.html")
 	if err != nil {
-		fmt.Println("Error parsing template.")
-		fmt.Println(err)
+		log.Println("Error parsing template.")
+		log.Println(err)
 		return
 	}
 	data := map[string]string{"PORT": config.PORT}
@@ -97,12 +120,12 @@ func checkGlobalTimer() {
 			}
 		}
 		time.Sleep(3 * time.Second)
-		fmt.Println(tempFileTimers)
+		log.Println(tempFileTimers)
 	}
 }
 
 func main() {
-	fmt.Printf("Running a simple server at port %s...\n", config.PORT)
+	log.Printf("Running a simple server at port %s...\n", config.PORT)
 	go checkGlobalTimer()
 	setupRoutes()
 }

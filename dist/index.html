@@ -48,7 +48,7 @@
                 <span>Create new <span class="highlight">private note</span></span>
             </div>
             <div class="desc">&nbspWrite the note below, encrypt it and get a link</div>
-            <textarea class="function" placeholder="Write your note here..." tabindex="1"></textarea>
+            <textarea class="function" id="originalNote" placeholder="Write your note here..." tabindex="1"></textarea>
         </div>
         <div class="functionBox">
             <div class="title">
@@ -66,36 +66,11 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
                 </div>
                 <div class="form-group col-md-6">
                 <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="form-group">
-                <label for="inputAddress2">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                </select>
-                </div>
-                <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
+                <input name="pwd" type="password" class="form-control" id="inputPassword4" placeholder="Password">
                 </div>
             </div>
         </form>

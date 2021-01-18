@@ -1,11 +1,11 @@
 <div class="container-fluid">
     <div class="row no-gutters d-flex align-items-center">
         <div class="nav d-flex justify-content-center align-items-center offset-3 col-6">
-            <a class="cur" href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">API</a>
-            <a href="#">Privacy</a>
-            <a href="#">Support</a>
+            <a {{if (cur == 1)}}class="cur"{{/if}} href="./index.html">Home</a>
+            <a {{if (cur == 2)}}class="cur"{{/if}} href="./about.html">About</a>
+            <a {{if (cur == 3)}}class="cur"{{/if}} href="#">API</a>
+            <a {{if (cur == 4)}}class="cur"{{/if}} href="#">Privacy</a>
+            <a {{if (cur == 5)}}class="cur"{{/if}} href="#">Support</a>
         </div>
     </div>
     <div class="row no-gutters">

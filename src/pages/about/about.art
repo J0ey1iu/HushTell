@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>About</title>
+</head>
+<body>
+    <header>{{include '../../common/header/header.art'}}</header>
+    <main>{{include './components/text.art'}}</main>
+    <footer><% include ('../../common/footer/footer.art',{cur:2}) %></footer>
+</body>
+</html>

@@ -5,6 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const resolve = dir=>path.resolve(__dirname, dir);
 
 module.exports = {
+  devServer: {
+    port: 9000
+    },
   mode:"development",
   entry: {
     index:'./src/pages/index/index.js'

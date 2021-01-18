@@ -1,6 +1,7 @@
 import Dropzone from 'api/dropzone-5.7.0/dist/dropzone.js'
 import axios from 'api/js/axios.min.js'
 import { options } from '../../../../api/dropzone-5.7.0/dist/dropzone';
+import UPLOADURL from '../config.js';
 
 // note function
 (function() {
@@ -59,22 +60,21 @@ import { options } from '../../../../api/dropzone-5.7.0/dist/dropzone';
             submitBtn.innerHTML = "Pls Add Notes or Files";
             setTimeout(function(){
                 submitBtn.style.background = "linear-gradient( 83deg, rgb(67,191,102) 0%, rgb(116,220,123) 100%)";
-                submitBtn.innerHTML = "CREATE NOTE"  ;              
+                submitBtn.innerHTML = "CREATE NOTE";              
             },3000)
         }else{
+            let params = new FormData();
+            params.append('note', originalNote.value);
+            params.append('file', myDropzone.files[0]);
+            params.append('options', {
+                "eamil": optionsForm.email.value,
+                "pwd": optionsForm.pwd.value
+            })
             // POST
-            axios({
-                method: 'post',
-                url: '/upload',
-                data: {
-                    note: originalNote.value,
-                    file: myDropzone.files,
-                    options:{
-                        eamil: optionsForm.email.value,
-                        pwd: optionsForm.pwd.value
-                    }
+            axios.post(UPLOADURL,params,{
+                headers: {'Content-Type': 'multipart/form-data'}
                 }
-            }).then(function (response) {
+            ).then(function (response) {
                 console.log(response);
             })
             .catch(function (error) {

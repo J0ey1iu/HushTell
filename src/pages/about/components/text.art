@@ -1,0 +1,14 @@
+<div class="aboutContainer mt-4">
+    <div class="title"><h2>About Ours</h2></div>
+    <p>sth description</p>
+    <p>sth description</p>
+    <p>sth description</p>
+    <div class="subTitle"><h5>How it work?</h5></div>
+    <div class="exampleImg">
+        <img src="./img/pig.jpg" alt="exampleImg">
+    </div>
+    <p>sth description</p>
+    <p>sth description</p>
+    <p>sth description</p>
+    <a class="btn btn-primary rounded-pill tryBtn" href="./index.html" role="button">Have a try!</a>
+</div>

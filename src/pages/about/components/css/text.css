@@ -1,0 +1,31 @@
+main .aboutContainer{
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 26px;
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
+    min-height: 600px;
+    width: 95% !important;
+}
+main .aboutContainer p{
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+main .aboutContainer .title{
+    height: 3rem;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+main .aboutContainer .title h2{
+    font-weight: bold;
+}
+main .aboutContainer .subTitle h5{
+    font-weight: bold;
+}
+main .aboutContainer .tryBtn{
+    width:10rem;
+}

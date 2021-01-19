@@ -1,4 +1,5 @@
 // css
+import './components/js/text.js'
 
 // 共用样式
 import '../../assets/styles/base.css'

@@ -29,7 +29,8 @@ module.exports = {
   mode:"development",
   entry: {
     index: path.resolve(__dirname, 'src/pages/index/index.js'),
-    about: path.resolve(__dirname, 'src/pages/about/about.js')
+    about: path.resolve(__dirname, 'src/pages/about/about.js'),
+    API: path.resolve(__dirname, 'src/pages/API/API.js')
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -118,6 +119,11 @@ module.exports = {
             filename:'about.html',
             template:'./src/pages/about/about.art',
             chunks:['about']
+        }),
+        new HtmlWebpackPlugin({
+            filename:'API.html',
+            template:'./src/pages/API/API.art',
+            chunks:['API']
         }),
         new MiniCssExtractPlugin({
             filename: ({ chunk }) => `css/${chunk.name.replace('/js/', '/css/')}.css`,

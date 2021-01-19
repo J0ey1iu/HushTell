@@ -1,0 +1,40 @@
+main .APIContainer{
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 26px;
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
+    min-height: 600px;
+    width: 95% !important;
+}
+
+main .APIContainer h5{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+main .APIContainer p{
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+main .APIContainer .title{
+    height: 3rem;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+main .APIContainer .title h2{
+    font-weight: bold;
+}
+main .APIContainer .subTitle h5{
+    font-weight: bold;
+}
+main .APIContainer .APITable,
+main .APIContainer .ErrorCodeTable{
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}

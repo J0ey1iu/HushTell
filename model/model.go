@@ -6,6 +6,8 @@ import (
 
 type SavedFile struct {
 	Filename               string
+	Url                    string
+	Extension              string
 	InitTime               time.Time
 	ExpireDuration         time.Duration
 	AccessedExpireDuration time.Duration

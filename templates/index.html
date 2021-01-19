@@ -6,9 +6,13 @@
     <title>Upload</title>
 </head>
 <body>
-    <form action="http://localhost:{{.PORT}}/upload" enctype="multipart/form-data" method="post">
+    <form action="http://localhost:{{.PORT}}/upload-file" enctype="multipart/form-data" method="post">
         <input type="file" name="myfile" id="myfile">
         <input type="submit" value="upload">
+    </form>
+    <form action="http://localhost:{{.PORT}}/upload-text" method="post" enctype="multipart/form-data">
+        <input type="text" name="mytext" id="mytext">
+        <input type="submit" value="create note">
     </form>
 </body>
 </html>

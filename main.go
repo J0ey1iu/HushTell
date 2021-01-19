@@ -4,13 +4,12 @@ import (
 	"HushTell/config"
 	"HushTell/model"
 	"HushTell/util"
-	"bytes"
+	"encoding/json"
 	"fmt"
 	"html/template"
 	"io/ioutil"
 	"log"
 	"net/http"
-	"net/http/httputil"
 	"os"
 	"path/filepath"
 	"strings"
@@ -22,35 +21,28 @@ import (
 var tempFileTimers map[string]model.SavedFile = make(map[string]model.SavedFile)
 
 func uploadHandler(w http.ResponseWriter, r *http.Request) {
-	// test
-	data, err := httputil.DumpRequest(r, false)
-	if err != nil {
-		log.Fatal("Error when dumping request!!")
-	}
-	fmt.Printf("\n\n\n%s\n\n\n", string(data))
-
-	buf, bodyErr := ioutil.ReadAll(r.Body)
-	if bodyErr != nil {
-		log.Print("bodyErr ", bodyErr.Error())
-		http.Error(w, bodyErr.Error(), http.StatusInternalServerError)
+	// Handle OPTIONS first
+	if r.Method == "OPTIONS" {
+		w.WriteHeader(http.StatusOK)
 		return
 	}
 
-	rdr1 := ioutil.NopCloser(bytes.NewBuffer(buf))
-	rdr2 := ioutil.NopCloser(bytes.NewBuffer(buf))
-	log.Printf("BODY: %q", rdr1)
-	r.Body = rdr2
+	// if r.Method == "POST"
+	// Set headers
+	headers := w.Header()
+	headers.Set("Content-Type", "application/json")
+	headers.Set("Access-Control-Allow-Origin", "*")
 
 	// get the client IP
 	clientIP := strings.Split(r.RemoteAddr, ":")[0]
 	// hash the IP
 	clientHash := util.ShortHash(clientIP)
+
 	// create folder
 	util.CreateFolderByName(clientHash)
-
-	// display on page
 	log.Println("Receiving an upload from: " + clientIP)
-	fmt.Fprintf(w, "<h1>Page after upload</h1>\n")
+
+	// parse the form
 	r.ParseMultipartForm(10 << 20)
 	r.ParseForm()
 
@@ -71,10 +63,15 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 	_, err = tempFile.Write(fileBytes)
 
 	// create a new record
-	tempFileTimers[tempFileName] = model.SavedFile{Filename: tempFileName, InitTime: time.Now(), ExpireDuration: config.GlobalExpireDuration, AccessedExpireDuration: 3 * time.Second}
+	obj := model.SavedFile{Filename: tempFileName, InitTime: time.Now(), ExpireDuration: config.GlobalExpireDuration, AccessedExpireDuration: 3 * time.Second}
+	tempFileTimers[tempFileName] = obj
 
-	fmt.Fprintln(w, "Uploaded successfully.")
-	fmt.Fprintf(w, "Corresponding file <a href=\"%s\">link", "http://localhost:"+config.PORT+"/f/"+tempFileName)
+	// response to the request
+	resp, err := json.Marshal(obj)
+	if err != nil {
+		panic(err)
+	}
+	w.Write(resp)
 }
 
 func indexPage(w http.ResponseWriter, r *http.Request) {
@@ -89,6 +86,14 @@ func indexPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func fileAccessHandler(w http.ResponseWriter, r *http.Request) {
+	// Handle OPTIONS first
+	if r.Method == "OPTIONS" {
+		w.WriteHeader(http.StatusOK)
+		return
+	}
+
+	// if r.Method == "GET"
+
 	vars := mux.Vars(r)
 	fmt.Fprintf(w, "The file you are trying to access is: %s\n", vars["filename"])
 	path := "./temp/" + vars["hashedIP"] + "/" + vars["filename"]
@@ -106,9 +111,9 @@ func fileAccessHandler(w http.ResponseWriter, r *http.Request) {
 
 func setupRoutes() {
 	r := mux.NewRouter()
-	r.HandleFunc("/upload", uploadHandler)
+	r.HandleFunc("/upload-file", uploadHandler).Methods("POST", "OPTIONS")
 	r.HandleFunc("/", indexPage)
-	r.HandleFunc("/f/{hashedIP}/{filename}", fileAccessHandler)
+	r.HandleFunc("/f/{hashedIP}/{filename}", fileAccessHandler).Methods("GET", "OPTIONS")
 	http.ListenAndServe(":"+config.PORT, r)
 }
 

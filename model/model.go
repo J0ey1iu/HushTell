@@ -10,3 +10,8 @@ type SavedFile struct {
 	ExpireDuration         time.Duration
 	AccessedExpireDuration time.Duration
 }
+
+type Test struct {
+	IP       string
+	HashedIP string
+}

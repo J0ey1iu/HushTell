@@ -1,1 +1,1 @@
-const UPLOADURL = "/upload";
+export const UPLOADURL = "http://localhost:8000/upload-file";

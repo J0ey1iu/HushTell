@@ -1,7 +1,7 @@
 import Dropzone from 'api/dropzone-5.7.0/dist/dropzone.js'
 import axios from 'api/js/axios.min.js'
 import { options } from '../../../../api/dropzone-5.7.0/dist/dropzone';
-import UPLOADURL from '../config.js';
+import * as URL from '../config.js';
 
 // note function
 (function() {
@@ -65,13 +65,14 @@ import UPLOADURL from '../config.js';
         }else{
             let params = new FormData();
             params.append('note', originalNote.value);
-            params.append('file', myDropzone.files[0]);
+            params.append('myfile', myDropzone.files[0]);
             params.append('options', {
                 "eamil": optionsForm.email.value,
                 "pwd": optionsForm.pwd.value
             })
+            console.log(URL["UPLOADURL"]);
             // POST
-            axios.post(UPLOADURL,params,{
+            axios.post(URL["UPLOADURL"],params,{
                 headers: {'Content-Type': 'multipart/form-data'}
                 }
             ).then(function (response) {

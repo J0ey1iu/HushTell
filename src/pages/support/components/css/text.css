@@ -1,0 +1,34 @@
+main .supportContainer{
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 26px;
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
+    min-height: 600px;
+    width: 95% !important;
+}
+
+main .supportContainer h5{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+main .supportContainer p{
+    margin-bottom: 2rem;
+}
+main .supportContainer .title{
+    height: 3rem;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+main .supportContainer .title h3{
+    font-weight: bold;
+}
+
+main .supportContainer .supportBody{
+    margin-top: 2rem;
+}

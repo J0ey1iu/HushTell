@@ -31,7 +31,8 @@ module.exports = {
     index: path.resolve(__dirname, 'src/pages/index/index.js'),
     about: path.resolve(__dirname, 'src/pages/about/about.js'),
     API: path.resolve(__dirname, 'src/pages/API/API.js'),
-    FAQ: path.resolve(__dirname, 'src/pages/FAQ/FAQ.js')
+    FAQ: path.resolve(__dirname, 'src/pages/FAQ/FAQ.js'),
+    support: path.resolve(__dirname, 'src/pages/support/support.js')
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -130,6 +131,11 @@ module.exports = {
             filename:'FAQ.html',
             template:'./src/pages/FAQ/FAQ.art',
             chunks:['FAQ']
+        }),
+        new HtmlWebpackPlugin({
+            filename:'support.html',
+            template:'./src/pages/support/support.art',
+            chunks:['support']
         }),
         new MiniCssExtractPlugin({
             filename: ({ chunk }) => `css/${chunk.name.replace('/js/', '/css/')}.css`,

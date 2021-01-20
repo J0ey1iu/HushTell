@@ -5,7 +5,7 @@
             <a {{if (cur == 2)}}class="cur"{{/if}} href="./about.html">About</a>
             <a {{if (cur == 3)}}class="cur"{{/if}} href="./API.html">API</a>
             <a {{if (cur == 4)}}class="cur"{{/if}} href="./FAQ.html">FAQ</a>
-            <a {{if (cur == 5)}}class="cur"{{/if}} href="#">Support</a>
+            <a {{if (cur == 5)}}class="cur"{{/if}} href="./support.html">Support</a>
         </div>
     </div>
     <div class="row no-gutters">

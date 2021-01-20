@@ -1,0 +1,97 @@
+main .FAQContainer{
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 26px;
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
+    min-height: 600px;
+    width: 95% !important;
+}
+
+main .FAQContainer h5{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+main .FAQContainer p{
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+main .FAQContainer .title{
+    height: 3rem;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+main .FAQContainer .title h3{
+    font-weight: bold;
+}
+
+main .FAQContainer .QAContainer .orderNumber{
+    background: #f2f2f8;
+    padding: 2px 5px;
+    color: #676978;
+    font-weight: bold;
+    margin-right: 5px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-size: 12px;
+}
+main .FAQContainer .QAContainer .questionContainer{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+main .FAQContainer .QAContainer .questionContainer .question{
+    padding: 2px 5px;
+    color: #629ae0;
+    font-weight: bold;
+}
+main .FAQContainer .QAContainer .questionContainer .question:hover{
+    text-decoration: underline !important;
+    color: gray;
+}
+main .FAQContainer .QAContainer .answerContainer{
+    display: flex;
+}
+main .FAQContainer .QAContainer .answerContainer .spaceArea{
+    background: #f2f2f8;
+    padding: 2px 5px;
+    color: white;
+    font-weight: bold;
+    margin-right: 5px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-size: 12px;
+    opacity: 0;
+}
+main .FAQContainer .QAContainer .answerContainer .answer{
+    position: relative;
+    display: inline-block;
+    background-color: #f2f3f8;
+    padding: 10px 15px;
+    border: 1px solid #f2f3f8;
+    border-radius: 5px;
+}
+
+main .FAQContainer .QAContainer .answerContainer .answer::after{
+    bottom: 100%;
+    left: 30px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(238, 238, 238, 0);
+    border-bottom-color: #f2f3f8;
+    border-width: 10px;
+    margin-left: -10px;
+    border-radius: 5px;
+}

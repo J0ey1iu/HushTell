@@ -20,7 +20,7 @@ main .aboutContainer .title{
     width: 100%;
     border-bottom: 1px solid #eee;
 }
-main .aboutContainer .title h2{
+main .aboutContainer .title h3{
     font-weight: bold;
 }
 main .aboutContainer .subTitle h5{
@@ -28,4 +28,5 @@ main .aboutContainer .subTitle h5{
 }
 main .aboutContainer .tryBtn{
     width:10rem;
+    font-weight: bold;
 }

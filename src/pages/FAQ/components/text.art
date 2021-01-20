@@ -1,0 +1,51 @@
+<div class="FAQContainer mt-4">
+    <div class="title"><h3>FAQ</h3></div>
+    <div class="QAContainer">
+        <div class="questionContainer">
+            <span class="orderNumber">01</span>
+            <a class="question" data-toggle="collapse" href="#Q1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Q1
+            </a>
+        </div>
+        <div class="collapse mt-3" id="Q1">
+            <div class="answerContainer">
+                <span class="spaceArea">0</span>
+                <div class="answer">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="QAContainer">
+        <div class="questionContainer">
+            <span class="orderNumber">02</span>
+            <a class="question" data-toggle="collapse" href="#Q2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Q2
+            </a>
+        </div>
+        <div class="collapse mt-3" id="Q2">
+            <div class="answerContainer">
+                <span class="spaceArea">0</span>
+                <div class="answer">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="QAContainer">
+        <div class="questionContainer">
+            <span class="orderNumber">03</span>
+            <a class="question" data-toggle="collapse" href="#Q3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Q3
+            </a>
+        </div>
+        <div class="collapse mt-3" id="Q3">
+            <div class="answerContainer">
+                <span class="spaceArea">0</span>
+                <div class="answer">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

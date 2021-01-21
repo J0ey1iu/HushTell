@@ -71,17 +71,33 @@ import * as URL from '../config.js';
                 submitBtn.innerHTML = "CREATE NOTE";  
                 submitBtn.blur();            
             },3000)            
+        }else if(originalNote.value){
+            let params = new FormData();
+            params.append('mytext', myDropzone.files[0]);
+            params.append('options', {
+                "eamil": optionsForm.email.value,
+                "pwd": optionsForm.pwd.value
+            })
+            // POST
+            axios.post(URL["UPLOADTEXTURL"],params,{
+                headers: {'Content-Type': 'multipart/form-data'}
+                }
+            ).then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });;
         }else{
             let params = new FormData();
-            params.append('mytext', originalNote.value);
             params.append('myfile', myDropzone.files[0]);
             params.append('options', {
                 "eamil": optionsForm.email.value,
                 "pwd": optionsForm.pwd.value
             })
-            console.log(URL["UPLOADURL"]);
+            console.log(URL["UPLOADFILEURL"]);
             // POST
-            axios.post(URL["UPLOADURL"],params,{
+            axios.post(URL["UPLOADFILEURL"],params,{
                 headers: {'Content-Type': 'multipart/form-data'}
                 }
             ).then(function (response) {

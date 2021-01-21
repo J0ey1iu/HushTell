@@ -1,0 +1,22 @@
+<div class="generateContainer">
+    <div class="title"><h3>Ready</h3></div>
+    <p>Copy the link, paste it into an email or instant message and send it to whom you want to read the note.</p>
+    <div class="input-group mb-4 LinkURL">
+        <div class="input-group-prepend">
+            <span class="input-group-text LinkBox" id="basic-addon1">http://localhost:8000/</span>
+        </div>
+        <input type="text" class="form-control URLBox" aria-label="LINK" aria-describedby="basic-addon1" value="11" disabled>
+    </div>
+    <div class="linkFooter">
+        <div class="tips">
+            The note will self-destruct after reading it.
+        </div>
+        <div class="btnGroup"> 
+            <button type="button" id="copyBtn" class="btn btn-outline-primary btn-sm">Copy</button>
+            <button type="button" id="deleteBtn" class="btn btn-outline-danger btn-sm">Delete Now</button>
+        </div> 
+    </div>
+</div>
+<div class="returnBar">
+    <a class="returnBtn" href="#" role="button">CREATE NEW</a>
+</div>

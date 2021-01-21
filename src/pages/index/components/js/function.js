@@ -60,14 +60,16 @@ import * as URL from '../config.js';
             submitBtn.innerHTML = "Pls Add Notes or Files";
             setTimeout(function(){
                 submitBtn.style.background = "linear-gradient( 83deg, rgb(67,191,102) 0%, rgb(116,220,123) 100%)";
-                submitBtn.innerHTML = "CREATE NOTE";              
+                submitBtn.innerHTML = "CREATE NOTE";
+                submitBtn.blur();              
             },3000)
         }else if(originalNote.value && myDropzone.files.length){
             submitBtn.style.background = "red";
             submitBtn.innerHTML = "Pls Only Notes or Only File";
             setTimeout(function(){
                 submitBtn.style.background = "linear-gradient( 83deg, rgb(67,191,102) 0%, rgb(116,220,123) 100%)";
-                submitBtn.innerHTML = "CREATE NOTE";              
+                submitBtn.innerHTML = "CREATE NOTE";  
+                submitBtn.blur();            
             },3000)            
         }else{
             let params = new FormData();

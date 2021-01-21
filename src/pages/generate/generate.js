@@ -10,10 +10,9 @@ import '../../assets/styles/iconfont.css'
 // bootstrap
 import '../../api/bootstrap4/css/bootstrap.min.css'
 
-// index components
-import './components/css/showLink.css'
-
 //js
+
+import './components/js/showLink.js'
 
 //字体图标
 import '../../api/js/iconfont.js'

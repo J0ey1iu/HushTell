@@ -12,7 +12,7 @@
             The note will self-destruct after reading it.
         </div>
         <div class="btnGroup"> 
-            <button type="button" id="copyBtn" class="btn btn-outline-primary btn-sm">Copy</button>
+            <button type="button" id="copyBtn" class="btn btn-outline-primary btn-sm" data-clipboard-text="success">Copy</button>
             <button type="button" id="deleteBtn" class="btn btn-outline-danger btn-sm">Delete Now</button>
         </div> 
     </div>

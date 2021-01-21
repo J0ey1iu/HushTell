@@ -1,26 +1,26 @@
-main .container-fluid{
+main .createLinkBox{
     position: relative;
 }
-main .container-fluid .row .howItWork{
+main .createLinkBox .row .howItWork{
     font-size: 16px;
     color: #00abee;
     font-weight: bold;
 }
-main .container-fluid .row .howItWork i{
+main .createLinkBox .row .howItWork i{
     font-weight: normal;
     color:gray;
 }
-main .container-fluid .row .howItWork a{
+main .createLinkBox .row .howItWork a{
     text-decoration: underline !important;
     cursor: pointer;
 }
-main .container-fluid .row .howItWork a:hover{
+main .createLinkBox .row .howItWork a:hover{
     text-decoration: none !important;
 }
-main .container-fluid .functionContainer{
+main .createLinkBox .functionContainer{
     position: relative;
 }
-main .container-fluid .functionContainer .functionBox{
+main .createLinkBox .functionContainer .functionBox{
     position: relative;
     width: 48%;
     background-color: rgb(255, 255, 255);
@@ -32,47 +32,47 @@ main .container-fluid .functionContainer .functionBox{
     margin-left:2%;
 }
 
-main .container-fluid .functionContainer .functionBox:hover{
+main .createLinkBox .functionContainer .functionBox:hover{
     box-shadow: 0px 0px 50px 0px rgba(0, 23, 32, 0.1);
 	margin-top: -2px;
 }
 @media (max-width:768px){
-    main .container-fluid .functionContainer .functionBox{
+    main .createLinkBox .functionContainer .functionBox{
         width: 100%;
         margin-bottom: 20px;
     }
 }
-main .container-fluid .functionContainer .functionBox .title{
+main .createLinkBox .functionContainer .functionBox .title{
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-main .container-fluid .functionContainer .functionBox .title .iconfontIndex{
+main .createLinkBox .functionContainer .functionBox .title .iconfontIndex{
     font-size: 1.5rem !important;
 }
-main .container-fluid .functionContainer .functionBox .title span{
+main .createLinkBox .functionContainer .functionBox .title span{
     font-size: 1.5rem;
     font-weight: bold;
     word-wrap: break-word;
 }
-main .container-fluid .functionContainer .functionBox:first-child .title .iconfontIndex,
-main .container-fluid .functionContainer .functionBox:first-child .title span .highlight{
+main .createLinkBox .functionContainer .functionBox:first-child .title .iconfontIndex,
+main .createLinkBox .functionContainer .functionBox:first-child .title span .highlight{
     color: #00abee;
 }
 
-main .container-fluid .functionContainer .functionBox:last-child .title .iconfontIndex,
-main .container-fluid .functionContainer .functionBox:last-child .title span .highlight{
+main .createLinkBox .functionContainer .functionBox:last-child .title .iconfontIndex,
+main .createLinkBox .functionContainer .functionBox:last-child .title span .highlight{
     color: #5eb54e;
 }
 
-main .container-fluid .functionContainer .functionBox .desc{
+main .createLinkBox .functionContainer .functionBox .desc{
     font-size: 14px;
     line-height: 18px;
     color: #77888f;
     margin-bottom: 20px;
 }
 
-main .container-fluid .functionContainer .functionBox .function{
+main .createLinkBox .functionContainer .functionBox .function{
     width: 100%;
     height: 450px;
     position: relative;
@@ -84,30 +84,30 @@ main .container-fluid .functionContainer .functionBox .function{
     font-family: unset;
     transition: 1s ease;
 }
-main .container-fluid .functionContainer .functionBox .function:focus{
+main .createLinkBox .functionContainer .functionBox .function:focus{
     border: #00abee solid 2px;
 }
-main .container-fluid .functionContainer .functionBox textarea.function{
+main .createLinkBox .functionContainer .functionBox textarea.function{
     outline: none;
     resize: none;
 }
 
-main .container-fluid .settingsBtn{
+main .createLinkBox .settingsBtn{
     display: flex;
     justify-content: center;
 }
 
-main .container-fluid .settingsForm{
+main .createLinkBox .settingsForm{
     width: 100%;
     margin: 0 auto;
     transition: .5s ease;
     height: auto;
 }
-main .container-fluid .settingsForm.hidden{
+main .createLinkBox .settingsForm.hidden{
     height: 0;
     overflow: hidden;
 }
-main .container-fluid .settingsForm #optionsForm{
+main .createLinkBox .settingsForm #optionsForm{
     width: 100%;
     position: relative;
     background-color: rgb(255, 255, 255);
@@ -117,7 +117,7 @@ main .container-fluid .settingsForm #optionsForm{
     margin-left: 2%;
     transition: 2s ease;
 }
-main .container-fluid .submitBtn .btn{
+main .createLinkBox .submitBtn .btn{
     margin: 15px 0 0 0;
     background-image: linear-gradient( 83deg, rgb(67,191,102) 0%, rgb(116,220,123) 100%);
     box-shadow: 0px 10px 40px 0px rgba(0, 23, 32, 0.2);
@@ -130,6 +130,6 @@ main .container-fluid .submitBtn .btn{
     text-align: center;
 
 }
-main .container-fluid .submitBtn .btn:hover{
+main .createLinkBox .submitBtn .btn:hover{
     box-shadow: 0px 10px 60px 0px rgba(0, 23, 32, 0.3);
 }

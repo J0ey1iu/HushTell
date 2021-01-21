@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid createLinkBox">
     <div class="row no-gutters mt-4">
         <span class="howItWork col-6 col-md-2 ml-auto text-right" href="#"><i class="iconfontIndex">&#xe603;</i>&nbsp<a>How it work?</a></span>
     </div>

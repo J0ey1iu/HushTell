@@ -1,4 +1,7 @@
-main .generateContainer{
+main .showLinkBox{
+    display: none;
+}
+main .showLinkBox .generateContainer{
     display: block;
     margin: 0 auto;
     font-size: 16px;
@@ -11,47 +14,47 @@ main .generateContainer{
     margin-bottom: 2rem;
     width: 64% !important;
 }
-main .generateContainer h5{
+main .showLinkBox .generateContainer h5{
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-main .generateContainer p{
+main .showLinkBox .generateContainer p{
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
-main .generateContainer .title{
+main .showLinkBox .generateContainer .title{
     height: 3rem;
     width: 100%;
     border-bottom: 1px solid #eee;
 }
-main .generateContainer .title h3{
+main .showLinkBox .generateContainer .title h3{
     font-weight: bold;
 }
-main .generateContainer .LinkURL{
+main .showLinkBox .generateContainer .LinkURL{
     width: 100%;
     font-weight: bold;
     margin-bottom: 1rem;
 }
-main .generateContainer .LinkURL .LinkBox{
+main .showLinkBox .generateContainer .LinkURL .LinkBox{
     color: #fff ;
     background-color: darkgray;
     border: none;
 }
-main .generateContainer .LinkURL .LinkBox:hover{
+main .showLinkBox .generateContainer .LinkURL .LinkBox:hover{
     background-color:rgb(189, 188, 188);
 }
-main .generateContainer .LinkURL .URLBox:disabled{
+main .showLinkBox .generateContainer .LinkURL .URLBox:disabled{
     background-color: #fff;
     border-left: none;
     padding: 0 20px;
 }
-main .generateContainer .linkFooter{
+main .showLinkBox .generateContainer .linkFooter{
     position: relative;
     display: flex;
     align-items: center;
 }
-main .generateContainer .linkFooter .tips{
+main .showLinkBox .generateContainer .linkFooter .tips{
     display: inline-block;
     position: relative;
     padding: .25rem .75rem;
@@ -62,14 +65,14 @@ main .generateContainer .linkFooter .tips{
     border-color: #deedd3;
     font-style: italic;
 }
-main .generateContainer .linkFooter .btnGroup{
+main .showLinkBox .generateContainer .linkFooter .btnGroup{
     position: absolute;;
     right:0;
 }
-main .generateContainer .linkFooter .btnGroup .btn{
+main .showLinkBox .generateContainer .linkFooter .btnGroup .btn{
     height: 100%;
 }
-main .returnBar{
+main .showLinkBox .returnBar{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -77,7 +80,7 @@ main .returnBar{
     margin-top:3 rem;
     margin-bottom: 6rem;
 }
-main .returnBar .returnBtn{
+main .showLinkBox .returnBar .returnBtn{
     width: 150px;
     display: block;
     height: 42px;
@@ -96,6 +99,6 @@ main .returnBar .returnBtn{
     overflow: hidden;
     border-radius: 100px;
 }
-main .returnBar .returnBtn:hover{
+main .showLinkBox .returnBar .returnBtn:hover{
     background-color: #39c2f9;
 }

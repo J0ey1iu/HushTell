@@ -33,7 +33,6 @@ module.exports = {
     API: path.resolve(__dirname, 'src/pages/API/API.js'),
     FAQ: path.resolve(__dirname, 'src/pages/FAQ/FAQ.js'),
     support: path.resolve(__dirname, 'src/pages/support/support.js'),
-    generate: path.resolve(__dirname, 'src/pages/generate/generate.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -137,11 +136,6 @@ module.exports = {
             filename:'support.html',
             template:'./src/pages/support/support.art',
             chunks:['support']
-        }),
-        new HtmlWebpackPlugin({
-            filename:'generate.html',
-            template:'./src/pages/generate/generate.art',
-            chunks:['generate']
         }),
         new MiniCssExtractPlugin({
             filename: ({ chunk }) => `css/${chunk.name.replace('/js/', '/css/')}.css`,

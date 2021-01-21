@@ -7,7 +7,10 @@
 </head>
 <body>
     <header>{{include '../../common/header/header.art'}}</header>
-    <main>{{include './components/function.art'}}</main>
+    <main>
+    {{include './components/function.art'}}
+    {{include './components/showLink.art'}}
+    </main>
     <footer><% include ('../../common/footer/footer.art',{cur:1}) %></footer>
 </body>
 </html>

@@ -7,9 +7,6 @@ import '../../assets/styles/reset.css'
 //字体图标
 import '../../assets/styles/iconfont.css'
 
-//dropzone
-import '../../api/dropzone-5.7.0/dist/dropzone.css'
-
 // bootstrap
 import '../../api/bootstrap4/css/bootstrap.min.css'
 
@@ -37,3 +34,4 @@ import '../../common/footer/footer.js'
 // index components
 import './components/js/iconfont.js'
 import './components/js/function.js'
+import './components/js/showLink.js'

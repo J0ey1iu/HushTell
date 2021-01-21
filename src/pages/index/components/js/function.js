@@ -62,9 +62,16 @@ import * as URL from '../config.js';
                 submitBtn.style.background = "linear-gradient( 83deg, rgb(67,191,102) 0%, rgb(116,220,123) 100%)";
                 submitBtn.innerHTML = "CREATE NOTE";              
             },3000)
+        }else if(originalNote.value && myDropzone.files.length){
+            submitBtn.style.background = "red";
+            submitBtn.innerHTML = "Pls Only Notes or Only File";
+            setTimeout(function(){
+                submitBtn.style.background = "linear-gradient( 83deg, rgb(67,191,102) 0%, rgb(116,220,123) 100%)";
+                submitBtn.innerHTML = "CREATE NOTE";              
+            },3000)            
         }else{
             let params = new FormData();
-            params.append('note', originalNote.value);
+            params.append('mytext', originalNote.value);
             params.append('myfile', myDropzone.files[0]);
             params.append('options', {
                 "eamil": optionsForm.email.value,

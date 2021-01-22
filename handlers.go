@@ -18,6 +18,10 @@ import (
 
 // UploadFileHandler handles file uploads
 func UploadFileHandler(w http.ResponseWriter, r *http.Request) {
+	// Set headers
+	headers := w.Header()
+	headers.Set("Content-Type", "application/json")
+	headers.Set("Access-Control-Allow-Origin", "*")
 	// Handle OPTIONS first
 	if r.Method == "OPTIONS" {
 		w.WriteHeader(http.StatusOK)
@@ -25,10 +29,6 @@ func UploadFileHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// if r.Method == "POST"
-	// Set headers
-	headers := w.Header()
-	headers.Set("Content-Type", "application/json")
-	headers.Set("Access-Control-Allow-Origin", "*")
 
 	// get the client IP
 	clientIP := strings.Split(r.RemoteAddr, ":")[0]
@@ -81,6 +81,10 @@ func UploadFileHandler(w http.ResponseWriter, r *http.Request) {
 
 // UploadTextHandler handles notes uploads
 func UploadTextHandler(w http.ResponseWriter, r *http.Request) {
+	// Set headers
+	headers := w.Header()
+	headers.Set("Content-Type", "application/json")
+	headers.Set("Access-Control-Allow-Origin", "*")
 	// Handle OPTIONS first
 	if r.Method == "OPTIONS" {
 		w.WriteHeader(http.StatusOK)
@@ -88,10 +92,6 @@ func UploadTextHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// if r.Method == "POST"
-	// Set headers
-	headers := w.Header()
-	headers.Set("Content-Type", "application/json")
-	headers.Set("Access-Control-Allow-Origin", "*")
 
 	// get the client IP
 	clientIP := strings.Split(r.RemoteAddr, ":")[0]

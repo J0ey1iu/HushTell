@@ -117,6 +117,47 @@ main .createLinkBox .settingsForm #optionsForm{
     margin-left: 2%;
     transition: 2s ease;
 }
+main .createLinkBox .settingsForm #optionsForm .form-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+main .createLinkBox .settingsForm #optionsForm .form-row .singleIOSSwitch{
+    width: 45%;
+}
+main .createLinkBox .settingsForm #optionsForm .form-row .setPwd,
+main .createLinkBox .settingsForm #optionsForm .form-row .hidden{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+main .createLinkBox .settingsForm #optionsForm .form-row .hidden{
+    opacity: 0;
+}
+main .createLinkBox .settingsForm #optionsForm .form-row .setPwd .multiIOSSwitch{
+    width: 30%;
+}
+main .createLinkBox .settingsForm #optionsForm .form-row .setPwd .txtForSwitch{
+    width: 40%;
+}
+main .createLinkBox .settingsForm #optionsForm .form-row.inputPwd{
+    display: none;
+    width: 100%;
+}
+main .createLinkBox .settingsForm #optionsForm .form-row.inputPwd .form-control{
+    display: inline-block !important;
+    width: 25%;
+    margin-right:20%;
+}
+main .createLinkBox .settingsForm #optionsForm .form-row .selectBox{
+    display: inline-block !important;
+    width: 30%;
+    margin-right:15%;    
+}
+
+
 main .createLinkBox .submitBtn .btn{
     margin: 15px 0 0 0;
     background-image: linear-gradient( 83deg, rgb(67,191,102) 0%, rgb(116,220,123) 100%);

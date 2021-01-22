@@ -21,6 +21,15 @@ import 'api/dropzone-5.7.0/dist/dropzone.css'
 (function() {
     const settingsBtn = document.getElementsByClassName("settingsBtn")[0].getElementsByTagName("button")[0];
     const settingsForm = document.getElementsByClassName("settingsForm")[0];
+    const encryptionBtn = document.querySelector("#encryption");
+    const inputPwd = document.getElementsByClassName("inputPwd")[0];
+    encryptionBtn.addEventListener("click",function(){
+        if(encryptionBtn.checked){
+            inputPwd.style.display = "flex";
+        }else{
+            inputPwd.style.display = "none";   
+        }
+    }, false);
     settingsBtn.addEventListener("click",function(){
         if (settingsForm.classList.contains("hidden")){
             settingsForm.classList.remove("hidden");

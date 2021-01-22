@@ -33,15 +33,15 @@ func ShortHash(s string) string {
 func CreateFolderByName(name string) {
 	// first determine if the folder exists
 	if _, err := os.Stat("./temp/" + name); os.IsNotExist(err) {
-		os.MkdirAll("./temp/"+name, os.ModePerm)
+		os.MkdirAll("./temp/"+name, os.ModePerm) // if temp does not exist, create it too
 	}
 }
 
 // InitAccessedTimer timer to delete accessed file
 func InitAccessedTimer(
 	key string, folder string, path string, visitTime time.Time,
-	thres time.Duration, globalTimers *map[string]model.SavedFile) {
-	for 1 == 1 {
+	thres time.Duration, globalTimers *map[string]model.CachedInfo) {
+	for {
 		if time.Now().Sub(visitTime) > thres {
 			os.Remove(path) // TODO: err not handled
 			delete(*globalTimers, key)

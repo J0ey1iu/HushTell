@@ -4,13 +4,12 @@ import (
 	"time"
 )
 
-type SavedFile struct {
-	Filename               string
-	Url                    string
-	Extension              string
-	InitTime               time.Time
-	ExpireDuration         time.Duration
-	AccessedExpireDuration time.Duration
+type CachedInfo struct {
+	Filename   string        `json:"filename"`
+	Url        string        `json:"Url"`
+	Extension  string        `json:"ext"`
+	UploadTime time.Time     `json:"upload-time"`
+	Duration   time.Duration `json:"duration"`
 }
 
 type Test struct {

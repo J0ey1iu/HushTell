@@ -89,13 +89,26 @@ import 'api/dropzone-5.7.0/dist/dropzone.css'
                 submitBtn.innerHTML = "CREATE NOTE";  
                 submitBtn.blur();            
             },3000)            
+        }else if(optionsForm.encrytionPwd.value != optionsForm.confirmPwd.value){
+            submitBtn.style.background = "red";
+            submitBtn.innerHTML = "The twp pwd are different!";
+            setTimeout(function(){
+                submitBtn.style.background = "linear-gradient( 83deg, rgb(67,191,102) 0%, rgb(116,220,123) 100%)";
+                submitBtn.innerHTML = "CREATE NOTE";  
+                submitBtn.blur();            
+            },3000)     
         }else if(originalNote.value){
             let params = new FormData();
-            params.append('mytext', myDropzone.files[0]);
+            params.append('mytext', originalNote.value);
             params.append('options', {
-                "eamil": optionsForm.email.value,
-                "pwd": optionsForm.pwd.value
+                "emailTip": optionsForm.emailTip.checked,
+                "readTip": optionsForm.readTip.checked,
+                "encryption": optionsForm.encryption.checked,
+                "encrytionPwd": optionsForm.encrytionPwd.value,
+                "readTime": optionsForm.readTime.value,
+                "saveTime":optionsForm.saveTime.value,
             })
+            console.log(params);
             // POST
             axios.post(URL["UPLOADTEXTURL"],params,{
                 headers: {'Content-Type': 'multipart/form-data'}
@@ -114,9 +127,14 @@ import 'api/dropzone-5.7.0/dist/dropzone.css'
             let params = new FormData();
             params.append('myfile', myDropzone.files[0]);
             params.append('options', {
-                "eamil": optionsForm.email.value,
-                "pwd": optionsForm.pwd.value
+                "emailTip": optionsForm.emailTip.checked,
+                "readTip": optionsForm.readTip.checked,
+                "encryption": optionsForm.encryption.checked,
+                "encrytionPwd": optionsForm.encrytionPwd.value,
+                "readTime": optionsForm.readTime.value,
+                "saveTime":optionsForm.saveTime.value,
             })
+            
             // POST
             axios.post(URL["UPLOADFILEURL"],params,{
                 headers: {'Content-Type': 'multipart/form-data'}

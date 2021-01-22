@@ -49,29 +49,29 @@
                 </div>
             </div>
             <div class="form-row inputPwd">
-                <input type="text" class="form-control  form-control-sm" placeholder="Enter pwd">
-                <input type="text" class="form-control  form-control-sm" placeholder="Enter pwd again">
+                <input type="text" class="form-control  form-control-sm" id="encryptionPwd" name="encrytionPwd" placeholder="Enter pwd">
+                <input type="text" class="form-control  form-control-sm" id="confirmPwd" name="confirmPwd" placeholder="Enter pwd again">
             </div>
             <div class="form-row mt-4">
                 <div class="form-group selectBox">
                     <label for="readTime">Read Time</label>
                     <select id="readTime" class="form-control form-control-sm">
-                        <option selected>after read it</option>
-                        <option>1 hour from now</option>
-                        <option>3 hours from now</option>
-                        <option>7 hours from now</option>
-                        <option>1 day from now</option>
-                        <option>3 day from now</option>
-                        <option>7 day from now</option>
+                        <option value="0" selected>after read it</option>
+                        <option value="1">1 hour from now</option>
+                        <option value="3">3 hours from now</option>
+                        <option value="12">12 hours from now</option>
+                        <option value="24">1 day from now</option>
+                        <option value="72">3 day from now</option>
+                        <option value="168">7 day from now</option>
                     </select>
                     <small id="readTimeHelp" class="form-text text-muted">From the first reading, this note/file will be automatically destroyed after the time you specify.</small>
                 </div>
                 <div class="form-group selectBox">
                     <label for="saveTime">Save Time</label>
                     <select id="saveTime" class="form-control form-control-sm">
-                        <option>1 day from now</option>
-                        <option>3 day from now</option>
-                        <option>7 day from now</option>
+                        <option value="1" selected>1 day from now</option>
+                        <option value="3">3 day from now</option>
+                        <option value="7">7 day from now</option>
                     </select>
                     <small id="saveTimeHelp" class="form-text text-muted">Since the file is created, the file will be destroyed after the time you set, whether it is read or not.</small>
                 </div>

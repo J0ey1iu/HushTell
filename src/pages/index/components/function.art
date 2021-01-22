@@ -49,8 +49,8 @@
                 </div>
             </div>
             <div class="form-row inputPwd">
-                <input type="text" class="form-control  form-control-sm" id="encryptionPwd" name="encrytionPwd" placeholder="Enter pwd">
-                <input type="text" class="form-control  form-control-sm" id="confirmPwd" name="confirmPwd" placeholder="Enter pwd again">
+                <input type="password" class="form-control  form-control-sm" id="encryptionPwd" name="encrytionPwd" placeholder="Enter pwd">
+                <input type="password" class="form-control  form-control-sm" id="confirmPwd" name="confirmPwd" placeholder="Enter pwd again">
             </div>
             <div class="form-row mt-4">
                 <div class="form-group selectBox">

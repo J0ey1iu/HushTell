@@ -116,8 +116,8 @@ import 'api/dropzone-5.7.0/dist/dropzone.css'
             ).then(function (response) {
                 createLinkBox.style.display = "none";
                 showLinkBox.style.display = "block";
-                URLBox.value = `${response.data["Url"]}${response.data["Extension"]}` 
-                let txtURL = `${URL["HOST"]}${response.data["Url"]}${response.data["Extension"]}`;
+                URLBox.value = `${response.data["Url"]}` 
+                let txtURL = `${URL["HOST"]}${response.data["Url"]}`;
                 copyBtn.setAttribute("data-clipboard-text", txtURL);
             })
             .catch(function (error) {
@@ -142,8 +142,8 @@ import 'api/dropzone-5.7.0/dist/dropzone.css'
             ).then(function (response) {
                 createLinkBox.style.display = "none";
                 showLinkBox.style.display = "block";
-                URLBox.value = `${response.data["Url"]}${response.data["Extension"]}` 
-                let fileURL = `${URL["HOST"]}${response.data["Url"]}${response.data["Extension"]}`;
+                URLBox.value = `${response.data["Url"]}` 
+                let fileURL = `${URL["HOST"]}${response.data["Url"]}`;
                 copyBtn.setAttribute("data-clipboard-text", fileURL);
             })
             .catch(function (error) {

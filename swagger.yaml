@@ -1,0 +1,144 @@
+basePath: /
+consumes:
+- multipart/form-data
+definitions:
+  CachedInfo:
+    description: CachedInfo is the info we store in cache
+    properties:
+      Url:
+        description: the generated url for the file
+        type: string
+      duration:
+        $ref: '#/definitions/Duration'
+      ext:
+        description: the extension of the file, we wouldn't want to show this to users
+        type: string
+        x-go-name: Extension
+      filename:
+        description: the original filename of the uploaded file
+        type: string
+        x-go-name: Filename
+      upload-time:
+        description: the upload time of the file
+        format: date-time
+        type: string
+        x-go-name: UploadTime
+    type: object
+    x-go-package: HushTell/model
+  Duration:
+    description: |-
+      A Duration represents the elapsed time between two instants
+      as an int64 nanosecond count. The representation limits the
+      largest representable duration to approximately 290 years.
+    format: int64
+    type: integer
+    x-go-package: time
+  Option:
+    description: Option is the user options we provides
+    properties:
+      emailTip:
+        description: in:query
+        type: boolean
+        x-go-name: EmailTip
+      encryption:
+        type: boolean
+        x-go-name: Encryption
+      pwd:
+        type: string
+        x-go-name: EncryptionPWD
+      readTime:
+        $ref: '#/definitions/Duration'
+      readTip:
+        type: boolean
+        x-go-name: ReadTip
+      saveTime:
+        $ref: '#/definitions/Duration'
+    type: object
+    x-go-package: HushTell/model
+host: localhost:8000
+info:
+  description: Documentation for tests
+  title: API documentation
+  version: 0.0.1
+paths:
+  /api/upload-file:
+    post:
+      consumes:
+      - multipart/form-data
+      description: take the user input and upload the file
+      operationId: uploadFile
+      parameters:
+      - in: formData
+        name: myfile
+        type: file
+        x-go-name: File
+      - in: formData
+        name: options
+        type: string
+        x-go-name: Options
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: CachedInfo
+          schema:
+            $ref: '#/definitions/CachedInfo'
+      schemes:
+      - http
+      tags:
+      - upload
+  /api/upload-text:
+    post:
+      consumes:
+      - multipart/form-data
+      description: upload the text user typed in along with the options they set
+      operationId: uploadText
+      parameters:
+      - in: formData
+        name: mytext
+        type: string
+        x-go-name: Text
+      - in: formData
+        name: options
+        type: string
+        x-go-name: Options
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: CachedInfo
+          schema:
+            $ref: '#/definitions/CachedInfo'
+      schemes:
+      - http
+      tags:
+      - upload
+  /f/{hashedIP}/{filename}:
+    get:
+      consumes:
+      - application/json
+      description: if the file is found, the timer will start run and automatically
+        destroy that file
+      operationId: getFile
+      produces:
+      - application/json
+      responses:
+        "200":
+          $ref: '#/responses/AccessResult'
+      schemes:
+      - http
+      summary: locate and try to access file and return the result,
+      tags:
+      - access
+produces:
+- application/json
+responses:
+  AccessResult:
+    description: AccessResponse for file access, tells whether the access was successful
+      or not
+    headers:
+      result:
+        type: string
+schemes:
+- http
+swagger: "2.0"

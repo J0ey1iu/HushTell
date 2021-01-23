@@ -100,15 +100,15 @@ import 'api/dropzone-5.7.0/dist/dropzone.css'
         }else if(originalNote.value){
             let params = new FormData();
             params.append('mytext', originalNote.value);
-            params.append('options', {
+            params.append('options', JSON.stringify({
                 "emailTip": optionsForm.emailTip.checked,
                 "readTip": optionsForm.readTip.checked,
                 "encryption": optionsForm.encryption.checked,
                 "encrytionPwd": optionsForm.encrytionPwd.value,
                 "readTime": optionsForm.readTime.value,
                 "saveTime":optionsForm.saveTime.value,
-            })
-            console.log(params);
+            }))
+
             // POST
             axios.post(URL["UPLOADTEXTURL"],params,{
                 headers: {'Content-Type': 'multipart/form-data'}
